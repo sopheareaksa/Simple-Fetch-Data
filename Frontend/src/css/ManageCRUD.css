@@ -1,0 +1,350 @@
+/* ==========================================================================
+   Manage CRUD / Product Management Styling
+   ========================================================================== */
+
+/* Main Container Card */
+.manage-product,
+.crud-container {
+  background-color: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 
+    0 1px 3px 0 rgba(0, 0, 0, 0.05),
+    0 4px 6px -2px rgba(0, 0, 0, 0.03);
+  padding: 32px;
+  max-width: 900px;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+/* Header Section */
+.manage-header,
+.manage-product h2 {
+  margin: 0 0 6px 0;
+  font-size: 22px;
+  font-weight: 700;
+  color: #0f172a;
+  letter-spacing: -0.4px;
+}
+
+.manage-subtitle,
+.manage-product p.subtitle {
+  margin: 0 0 28px 0;
+  font-size: 14px;
+  color: #64748b;
+  line-height: 1.5;
+}
+
+/* Form Layout (2-column responsive grid) */
+.manage-product form,
+.crud-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+/* Form groups (Label + Input container) */
+.manage-product > div,
+.manage-product form > div,
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-align: left;
+}
+
+/* Full-width fields (e.g. Description or image) */
+.form-group.full-width,
+.full-width {
+  grid-column: 1 / -1;
+}
+
+/* Label Styling */
+.manage-product label,
+.form-group label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #334155;
+  letter-spacing: 0.2px;
+}
+
+/* Input Fields */
+.manage-product input[type="text"],
+.manage-product input[type="number"],
+.manage-product select,
+.manage-product textarea,
+.form-input {
+  width: 100%;
+  padding: 12px 14px;
+  font-size: 14px;
+  color: #0f172a;
+  background-color: #f8fafc;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 10px;
+  outline: none;
+  box-sizing: border-box;
+  font-family: inherit;
+  transition: all 0.2s ease-in-out;
+}
+
+.manage-product input::placeholder,
+.manage-product textarea::placeholder {
+  color: #94a3b8;
+}
+
+.manage-product input:hover,
+.manage-product select:hover,
+.manage-product textarea:hover {
+  border-color: #cbd5e1;
+}
+
+.manage-product input:focus,
+.manage-product select:focus,
+.manage-product textarea:focus {
+  background-color: #ffffff;
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.12);
+}
+
+/* File Upload Input */
+.manage-product input[type="file"] {
+  width: 100%;
+  padding: 8px 12px;
+  font-size: 13px;
+  color: #64748b;
+  background-color: #f8fafc;
+  border: 1.5px dashed #cbd5e1;
+  border-radius: 10px;
+  cursor: pointer;
+  box-sizing: border-box;
+  transition: all 0.2s ease;
+}
+
+.manage-product input[type="file"]:hover {
+  border-color: #4f46e5;
+  background-color: #f1f5f9;
+}
+
+.manage-product input[type="file"]::file-selector-button {
+  padding: 8px 14px;
+  margin-right: 12px;
+  background-color: #e0e7ff;
+  color: #4338ca;
+  border: none;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.manage-product input[type="file"]::file-selector-button:hover {
+  background-color: #c7d2fe;
+}
+
+/* Form Action Buttons */
+.form-actions {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 12px;
+  padding-top: 20px;
+  border-top: 1px solid #f1f5f9;
+}
+
+/* Primary Button (Save / Submit) */
+.btn-save,
+.manage-product button[type="submit"] {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 11px 24px;
+  background: linear-gradient(135deg, #4f46e5 0%, #6366f1 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.25);
+  transition: all 0.2s ease;
+}
+
+.btn-save:hover,
+.manage-product button[type="submit"]:hover {
+  background: linear-gradient(135deg, #4338ca 0%, #4f46e5 100%);
+  box-shadow: 0 6px 16px rgba(79, 70, 229, 0.35);
+  transform: translateY(-1px);
+}
+
+.btn-save:active,
+.manage-product button[type="submit"]:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(79, 70, 229, 0.2);
+}
+
+/* Secondary Button (Cancel / Reset) */
+.btn-cancel,
+.btn-reset {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 11px 20px;
+  background-color: #f1f5f9;
+  color: #475569;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-cancel:hover,
+.btn-reset:hover {
+  background-color: #e2e8f0;
+  color: #1e293b;
+}
+
+/* Status / Alert Messages */
+.crud-alert-success {
+  grid-column: 1 / -1;
+  background-color: rgba(34, 197, 94, 0.1);
+  color: #16a34a;
+  border: 1px solid rgba(34, 197, 94, 0.25);
+  padding: 12px 16px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+
+.crud-alert-error {
+  grid-column: 1 / -1;
+  background-color: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+  border: 1px solid rgba(239, 68, 68, 0.25);
+  padding: 12px 16px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+
+/* ==========================================================================
+   Dark Mode Support
+   ========================================================================== */
+@media (prefers-color-scheme: dark) {
+  .manage-product,
+  .crud-container {
+    background-color: #111827;
+    border-color: #1f2937;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  }
+
+  .manage-header,
+  .manage-product h2 {
+    color: #f9fafb;
+  }
+
+  .manage-subtitle,
+  .manage-product p.subtitle {
+    color: #9ca3af;
+  }
+
+  .manage-product label,
+  .form-group label {
+    color: #cbd5e1;
+  }
+
+  .manage-product input[type="text"],
+  .manage-product input[type="number"],
+  .manage-product select,
+  .manage-product textarea,
+  .form-input {
+    background-color: #0f172a;
+    border-color: #334155;
+    color: #f8fafc;
+  }
+
+  .manage-product input:hover,
+  .manage-product select:hover,
+  .manage-product textarea:hover {
+    border-color: #475569;
+  }
+
+  .manage-product input:focus,
+  .manage-product select:focus,
+  .manage-product textarea:focus {
+    background-color: #0f172a;
+    border-color: #818cf8;
+    box-shadow: 0 0 0 4px rgba(129, 140, 248, 0.15);
+  }
+
+  .manage-product input[type="file"] {
+    background-color: #0f172a;
+    border-color: #334155;
+    color: #94a3b8;
+  }
+
+  .manage-product input[type="file"]:hover {
+    border-color: #818cf8;
+    background-color: #1e1b4b;
+  }
+
+  .manage-product input[type="file"]::file-selector-button {
+    background-color: #1e1b4b;
+    color: #a5b4fc;
+  }
+
+  .manage-product input[type="file"]::file-selector-button:hover {
+    background-color: #312e81;
+  }
+
+  .form-actions {
+    border-top-color: #1f2937;
+  }
+
+  .btn-cancel,
+  .btn-reset {
+    background-color: #1f2937;
+    border-color: #374151;
+    color: #cbd5e1;
+  }
+
+  .btn-cancel:hover,
+  .btn-reset:hover {
+    background-color: #374151;
+    color: #f9fafb;
+  }
+}
+
+/* ==========================================================================
+   Responsive (Mobile)
+   ========================================================================== */
+@media (max-width: 640px) {
+  .manage-product,
+  .crud-container {
+    padding: 20px 16px;
+    border-radius: 12px;
+  }
+
+  .manage-product form,
+  .crud-form-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .form-actions {
+    flex-direction: column-reverse;
+  }
+
+  .btn-save,
+  .btn-cancel,
+  .manage-product button {
+    width: 100%;
+  }
+}
+
