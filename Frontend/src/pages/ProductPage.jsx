@@ -4,6 +4,7 @@ import '../css/ProductPage.css'
 
 const ProductPage = () => {
   const [products, setProducts] = useState([])
+  
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState('')
   const [searchParams, setSearchParams] = useSearchParams();
@@ -62,10 +63,7 @@ const ProductPage = () => {
 
   useEffect(() => {
     fetchProducts()
-  }, [])
-
-
-
+  }, []);
 
 
   return (
@@ -150,7 +148,7 @@ const ProductPage = () => {
                     View Details
                   </button>
                   <button className='btn-card-action btn-action-primary'>
-                    Edit Product
+                    Add to Cart
                   </button>
                 </div>
               </div>
